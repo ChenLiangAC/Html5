@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <meta name="viewport" content="width=device-width,inital-scale=1.0,user-scalable=no">
+</head>
+<body>
+<header>
+    <h1><%= title %></h1>
+    <!--播放界面切换-->
+    <ul class="type" id="type">
+        <li data-type="dot" id="li1">Dot</li>
+        <li data-type="column" class="selected " id="li2">Column</li>
+    </ul>
+    <p>Volume <input id="volume" type="range" min="0" max="100" value="60"></p>
+</header>
+
+<div class="left">
+    <!--播放列表-->
+    <ul id="list">
+        <%music.forEach(function(name){%>
+
+        <li title="<%= name %>"><%= name %></li>
+        <%})%>
+
+    </ul>
+</div>
+<div class="right" id="box"></div>
+<script src="/javascripts/index.js" type="text/javascript"></script>
+</body>
+</html>
